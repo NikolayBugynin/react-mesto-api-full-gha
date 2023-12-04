@@ -9,7 +9,7 @@
 
 ## Ссылки на проект
 
-IP-адрес 51.250.79.172
+IP 51.250.79.172
 
 Frontend https://hello.nomoredomainsmonster.ru
 
