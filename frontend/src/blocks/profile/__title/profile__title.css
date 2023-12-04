@@ -1,0 +1,29 @@
+.profile__title {
+    margin: 0 0 0 46px;
+    width: 190px;
+    text-align: center;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 27px;
+    line-height: 33px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+@media screen and (min-width: 768px) {
+    .profile__title {
+        margin: 0;
+        text-align: start;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .profile__title {
+        text-align: start;
+        width: 300px;
+        font-size: 42px;
+        line-height: 48px;
+        max-width: 295px;
+    }
+}
