@@ -35,8 +35,8 @@ app.post('/signin', validationLogin, login);
 app.post('/signup', validationCreateUser, createUser);
 app.use(auth); // защита всех роутеров авторизацией
 app.use(routes);
+app.use(errorLogger);
 app.use(errors()); // обработчик ошибок celebrate
 app.use(handleErrors); // центральный обработчик ошибок
-app.use(errorLogger);
 
 app.listen(PORT);
