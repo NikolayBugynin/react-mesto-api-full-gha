@@ -18,7 +18,7 @@ module.exports.createCard = (req, res, next) => {
   const owner = req.user._id;
 
   Card.create({ name, link, owner })
-    .then((card) => res.status(STATUS_CODE_OBJECT_CREATED).send(card))
+    .then((card) => card.populate('owner').then((data) => res.status(STATUS_CODE_OBJECT_CREATED).send(data)))
     .catch((err) => {
       if (err.name === 'ValidationError') {
         return next(new BadRequest('Переданы некорректные данные'));
@@ -55,7 +55,7 @@ module.exports.likeCard = (req, res, next) => {
     req.params.cardId,
     { $addToSet: { likes: req.user._id } },
     { new: true },
-  )
+  ).populate(['likes', 'owner'])
     .orFail(() => { throw new NotFoundError('Карточка с указанным _id не найдена'); })
     .then((card) => res.send(card))
     .catch((err) => {

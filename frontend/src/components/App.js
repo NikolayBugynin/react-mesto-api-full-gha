@@ -211,9 +211,9 @@ function App() {
       .catch((err) => console.log("Error update info :" + err));
   }
 
-  function handleUpdateAvatar(value) {
+  function handleUpdateAvatar(dataForm) {
     api
-      .newAvatar(value)
+      .newAvatar(dataForm)
       .then((res) => {
         setCurrentUser(res);
         closeAllPopups();
@@ -221,15 +221,28 @@ function App() {
       .catch((err) => console.log(err));
   }
 
-  function handleAddPlaceSubmit(value) {
+  // function handleAddPlaceSubmit(value) {
+  //   api
+  //     .addCard((value), localStorage.getItem('token'))
+  //     .then((newCard) => {
+  //       setCards([newCard, ...cards]);
+  //       closeAllPopups();
+  //     })
+  //     .catch((err) => console.log("Error add card :", err));
+  // }
+
+
+  function handleAddPlaceSubmit(dataCard) {
     api
-      .addCard(value)
+      .addCard(dataCard)
       .then((newCard) => {
-        setCards([newCard, ...cards]);
         closeAllPopups();
+        setCards([newCard, ...cards]);
       })
-      .catch((err) => console.log("Error add card :", err));
+      .catch((err) => console.log("Error add card!"));
   }
+  
+
 
   const handleTrashClick = (card) => {
     setCardToDelete(card);

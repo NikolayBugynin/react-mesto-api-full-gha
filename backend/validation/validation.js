@@ -1,6 +1,6 @@
 const { celebrate, Joi } = require('celebrate');
 
-const linkRegex = /^https?:\/\/(www\.)?[0-9a-zA-Z]+([.|-]{1}[0-9a-zA-Z]+)*\.[0-9a-zA-Z-]+(\/[0-9a-zA-Z\-._~:/?#[\]@!$&'()*+,;=]*#?)?$/;
+const linkRegex = /^https?:\/\/(?:www\.)?[a-zA-Z0-9а-яА-Я-._~:/?#[\]@!$&'()*+,;=]+/im;
 
 module.exports.validationCreateCard = celebrate({
   body: Joi.object().keys({
