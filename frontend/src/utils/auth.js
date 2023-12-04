@@ -1,4 +1,4 @@
-export const BASE_URL = 'http://localhost:3001'
+export const BASE_URL = 'http://localhost:3000'
 // export const BASE_URL = 'https://api.hello.nomoredomainsmonster.ru';
 
 export const register = (email, password) => {
