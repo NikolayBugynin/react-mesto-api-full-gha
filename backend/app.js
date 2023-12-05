@@ -1,6 +1,7 @@
 require('dotenv').config();
 
 const express = require('express');
+const process = require('process');
 const mongoose = require('mongoose');
 const { errors } = require('celebrate');
 const helmet = require('helmet');
